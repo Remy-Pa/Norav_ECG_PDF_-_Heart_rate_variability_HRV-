@@ -198,7 +198,7 @@ def draw_lines_and_find_highest(image_name, current_coords) :
         couleurs_coordonnees = []
 
         #remplir la liste
-        for x in range(current_x-1, current_x+4) :
+        for x in range(current_x-2, current_x+4) :
             for y in range(current_y - 20, current_y+1) :
                 blue = image[y,x,0]
                 red = image[y,x,2]
