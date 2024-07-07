@@ -207,7 +207,7 @@ print('Hauteur :', hauteur)
 
 doc_PDF = fitz.open(nom_pdf)
 width, height = 3600, 2700
-debut = 193
+debut = 192
 fin = 3411
 
 if nombre_de_pages == 'Toutes' or nombre_de_pages == 'All' or nombre_de_pages == 'toutes' or nombre_de_pages == 'all' :
@@ -300,8 +300,9 @@ def draw_lines_and_find_highest(image_name, current_coords) :
                 image[current_coords[0]-30:current_coords[0]+30, current_coords[1]-1:current_coords[1]+2] = [0, 0, 255]
                 image[current_coords[0]-2:current_coords[0]+2, current_coords[1]-30:current_coords[1]+30] = [0, 0, 255]
                 cv2.imwrite(f'{image_name}_output.png', image)
-                print(f"Je pense avoir détecté quelque chose qui n'est pas un pic à {(current_coords[1] - debut)*10/(fin-debut) + (page-1) * 10} secondes")
+                print(f"Je pense avoir détecté quelque chose qui n'est pas un pic R à {(current_coords[1] - debut)*10/(fin-debut) + (page-1) * 10} secondes")
                 R_peaks_in_pixels.append(current_coords[1])
+                artefact_list.append(current_coords[1])
                 # cv2.imshow('title',image)
                 # cv2.waitKey(0)
                 # cv2.destroyAllWindows()
@@ -325,6 +326,8 @@ for i in nombre_de_pages :
 reste = None
 RR_en_pixels = []
 total_times = []
+artefact_list = []
+artefact_print_list = []
 
 #gérer les listes et append entre les pages
 for page in nombre_de_pages :
@@ -351,10 +354,17 @@ for page in nombre_de_pages :
         RR_en_pixels[-1] += R_peaks_in_pixels[0]-debut
         # print(RR_en_pixels[-1])
 
+    print(R_peaks_in_pixels)
     for i in range(len(R_peaks_in_pixels)-1) :
+        if R_peaks_in_pixels[i] in artefact_list :
+            while len(RR_en_pixels) > len(artefact_print_list):
+                artefact_print_list.append('')
+            artefact_print_list.append('Erreur?')
+
         RR_en_pixels.append(R_peaks_in_pixels[i+1]-R_peaks_in_pixels[i])
         # total time : temps entre le début et le moment ou le RR commence
         total_times.append((R_peaks_in_pixels[i] - debut)*10/(fin-debut) + (page-1) * 10)
+
     if not page == derniere_page :
         RR_en_pixels.append(fin - R_peaks_in_pixels[-1])
         total_times.append((R_peaks_in_pixels[-1] - debut)*10/(fin-debut) + (page-1) * 10)
@@ -369,7 +379,9 @@ print('total_times', total_times)
 print('RR len', len(RR_en_ms), "Total len", len(total_times))
 print(type(RR_en_ms))
 
-
+while len(RR_en_pixels) > len(artefact_print_list) :
+    artefact_print_list.append('')
+    
 #####################################################################################FIN DE LA LECTURE################################################################################
 
 sujet_nom_num = f'{sujet_nom}_#{numero_part}'
@@ -377,8 +389,8 @@ sujet_nom_num = f'{sujet_nom}_#{numero_part}'
 with open(f'{sujet_nom_num}_line_distances.csv', 'w', newline='') as csvfile:
     writer = csv.writer(csvfile)
     writer.writerow(['x', 'y'])
-    for (total_time, unRR_en_ms) in zip(total_times, RR_en_ms):
-        writer.writerow([total_time,unRR_en_ms])
+    for (total_time, unRR_en_ms, instance_artefact) in zip(total_times, RR_en_ms, artefact_print_list):
+        writer.writerow([total_time,unRR_en_ms, instance_artefact])
 print(type(RR_en_ms))
 # Get the indices of the 10 smallest values of 'Période'
 smallest_indices = sorted(range(len(RR_en_ms)), key=lambda x: RR_en_ms[x])[:10]
