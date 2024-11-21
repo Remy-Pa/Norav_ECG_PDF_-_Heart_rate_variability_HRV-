@@ -72,6 +72,7 @@ Then, the program analyses the file in two steps :
 &nbsp;&nbsp;&nbsp;&nbsp;These metrics are consigned in a .csv file WHICH CAN BE UNSTABLE. It is wise to keep backup copies of the files between each participant to avoid all possible data loss.  
 
 # Compatibility
+The program is entirely in French, though it contains little text and could probably be modified successfully by asking ChatGPT to translate the strings from French to English.
 This program was made and tested to work with ECG recording from the Norav Resting ECG software.  
 The code could easily be changed to accomodate a recording from a different software. For this, it would be important :  
   Change the region which represents the graphing area, identified by the variables 'debut' and 'fin', representing the space in pixels which is to the left and right of the graphing area, as well as the variable 'hauteur', the distance (in pixels) between the top of the image and the detection line.  
