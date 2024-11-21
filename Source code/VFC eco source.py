@@ -18,32 +18,6 @@ from contextlib import contextmanager
 import sys 
 import shutil
 
-# ####
-# PRIORITÉS                                                                                                                     
-# 1) faire marcher mode stat                                                                                                    FAIT
-# 2) faire marcher mode graph                                                                                                   FAIT
-# 3) porter mode overnight                                                                                                      FAIT
-# 4) faire un outil pour manuellement placer les pics R                                                                         FAIT
-# 5) changer la facon dont le fichier resultats normal est écrit? # nbs max si ammeton tu commence a 1 pis tu ajoute 3...       FAIT
-# 6) Rendre beau, icone, logo, titres                                                                                           FAIT
-# 7) mode fast a pas vrm de output image                                                                                        FAIT
-# 8) save dans le dossier PDF                                                                                                   FAIT
-# 9) verifier si cest harmonieux quand il pense trouver des artefacts
-
-# derniere etape) .exe AVEC LOGO
-# Tester avec mes data
-
-# ####
-
-# a verifier
-                                    #   un participant du debut a la fin
-
-
-#   un participant etape 2
-#   plusieurs participants partie 1
-#   plusieurs participants partie 2
-
-
 ####################################
 ########## DEFINITIONS #############
 ####################################
