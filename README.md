@@ -63,7 +63,14 @@ This program was developped as a free alternative to expensive programs for HRV 
 The program is available in executable file format (.exe)  
 The source code is also available to troubleshoot problems or change parts of it. To execeute the source code, python 3 is required as well as some libraries and packages.  
 To install the needed libraries and packages, on windows, type in the command prompt (CMD):  
-&nbsp;&nbsp;&nbsp;&nbsp;pip install # ... list coming soon  
+&nbsp;&nbsp;&nbsp;&nbsp;pip install customtkinter
+&nbsp;&nbsp;&nbsp;&nbsp;pip install numpy
+&nbsp;&nbsp;&nbsp;&nbsp;pip install scipy
+&nbsp;&nbsp;&nbsp;&nbsp;pip install pandas
+&nbsp;&nbsp;&nbsp;&nbsp;pip install pillow
+&nbsp;&nbsp;&nbsp;&nbsp;pip install opencv-python
+&nbsp;&nbsp;&nbsp;&nbsp;pip install matplotlib
+&nbsp;&nbsp;&nbsp;&nbsp;pip install pymupdf
 
 # Mecanism
 This program offers a GUI which allows input of information about a participant to identify the files (only the PDF file is strictly necessary).  
