@@ -13,7 +13,7 @@ Ce programme a été développé comme alternative gratuite à des programmes co
 Le programme est disponible en format exécutable (.exe).  
 Le code source est également disponible pour effectuer un dépannage ou pour modifier le code. Exécuter le code source requiert l'installation de python 3 et de bibliothèques.  
 Pour télécharger les bibliothèques nécessaire, sur windows, entrez dans l'invite de commande (CMD) :  
-'''
+```
 pip install customtkinter  
 pip install numpy  
 pip install scipy  
@@ -22,7 +22,7 @@ pip install pillow
 pip install opencv-python  
 pip install matplotlib  
 pip install pymupdf  
-'''
+```
 # Fonctionnement
 Ce programme offre un interface utilisateur qui permet d'entrer plusieurs informations sur le participants pour permettre d'étiqueter correctement les fichiers (seul le fichier PDF est strictement obligatoire).  
 Par la suite, le programme effectue une analyse en deux temps :  
@@ -64,7 +64,7 @@ This program was developped as a free alternative to expensive programs for HRV 
 The program is available in executable file format (.exe)  
 The source code is also available to troubleshoot problems or change parts of it. To execeute the source code, python 3 is required as well as some libraries and packages.  
 To install the needed libraries and packages, on windows, type in the command prompt (CMD):  
-'''
+```
 pip install customtkinter
 pip install numpy
 pip install scipy
@@ -73,7 +73,7 @@ pip install pillow
 pip install opencv-python
 pip install matplotlib
 pip install pymupdf
-'''
+```
 
 # Mecanism
 This program offers a GUI which allows input of information about a participant to identify the files (only the PDF file is strictly necessary).  
