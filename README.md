@@ -13,14 +13,14 @@ Ce programme a été développé comme alternative gratuite à des programmes co
 Le programme est disponible en format exécutable (.exe).  
 Le code source est également disponible pour effectuer un dépannage ou pour modifier le code. Exécuter le code source requiert l'installation de python 3 et de bibliothèques.  
 Pour télécharger les bibliothèques nécessaire, sur windows, entrez dans l'invite de commande (CMD) :  
-&nbsp;&nbsp;&nbsp;&nbsp;pip install customtkinter
-&nbsp;&nbsp;&nbsp;&nbsp;pip install numpy
-&nbsp;&nbsp;&nbsp;&nbsp;pip install scipy
-&nbsp;&nbsp;&nbsp;&nbsp;pip install pandas
-&nbsp;&nbsp;&nbsp;&nbsp;pip install pillow
-&nbsp;&nbsp;&nbsp;&nbsp;pip install opencv-python
-&nbsp;&nbsp;&nbsp;&nbsp;pip install matplotlib
-&nbsp;&nbsp;&nbsp;&nbsp;pip install pymupdf
+&nbsp;&nbsp;&nbsp;&nbsp;pip install customtkinter  
+&nbsp;&nbsp;&nbsp;&nbsp;pip install numpy  
+&nbsp;&nbsp;&nbsp;&nbsp;pip install scipy  
+&nbsp;&nbsp;&nbsp;&nbsp;pip install pandas  
+&nbsp;&nbsp;&nbsp;&nbsp;pip install pillow  
+&nbsp;&nbsp;&nbsp;&nbsp;pip install opencv-python  
+&nbsp;&nbsp;&nbsp;&nbsp;pip install matplotlib  
+&nbsp;&nbsp;&nbsp;&nbsp;pip install pymupdf  
 
 # Fonctionnement
 Ce programme offre un interface utilisateur qui permet d'entrer plusieurs informations sur le participants pour permettre d'étiqueter correctement les fichiers (seul le fichier PDF est strictement obligatoire).  
