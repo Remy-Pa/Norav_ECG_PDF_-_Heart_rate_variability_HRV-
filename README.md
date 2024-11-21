@@ -1,5 +1,5 @@
 # Norav ECG PDF -> HRV
-# Installer .exe / .exe latest release : https://github.com/Remy-Pa/Norav_ECG_PDF_-_Heart_rate_variability_HRV-/releases/tag/v1
+# Installer .exe / .exe latest release : https://github.com/Remy-Pa/Norav_ECG_PDF_-_Heart_rate_variability_HRV-/releases/tag/v1 VFC eco.exe au bas de la page
 
 ## English below
 
