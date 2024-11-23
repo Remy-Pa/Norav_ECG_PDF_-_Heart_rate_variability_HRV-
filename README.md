@@ -21,7 +21,7 @@ pip install pymupdf
 ```
 # Fonctionnement
 Ce logiciel offre un interface utilisateur qui permet d'entrer plusieurs informations sur le participants pour permettre d'étiqueter correctement les fichiers (seul le fichier PDF est strictement obligatoire). Par la suite, le logiciel effectue une analyse en deux temps :  
-1. Le logiciel lit chaque page du PDF désignée par l'utilisateur et détecte les pics R (du complexe QRS du tracé d'ECG) en débutant sur une ligne, détectant chaque fois que le tracé la traverse et tentant de 'monter' le long du tracé jusqu'à son sommet (supposément le sommet d'un pic R, corrélant à un battement de c&oelig;ur).  
+1. Le logiciel lit chaque page du PDF désignée par l'utilisateur et détecte les pics R (du complexe QRS du tracé d'ECG) en débutant sur une ligne horizontale, détectant chaque fois que le tracé la traverse et tentant de 'monter' le long du tracé jusqu'à son sommet (supposément le sommet d'un pic R, corrélant à un battement de c&oelig;ur). Ainsi, la ligne de détection devrait être assez basse pour détecter tous les pics R (certains peuvent être plus bas que d'autres), mais assez haute pour ne pas détecter les autres composantes de l'ECG, comme l'onde p, par exemple.  
 &nbsp;&nbsp;&nbsp;&nbsp;Le logiciel rend une image de chaque page, permettant de vérifier la bonne détection des pics R et de corriger les erreurs, s'il y a lieu, par l'interface utilisateur.  
 2. Le logiciel  effectue des calculs relatifs à la VFC et retourne :  
 &nbsp;&nbsp;&nbsp;&nbsp;RMSSD (root mean square of successive differences between RR intervals)  
@@ -68,7 +68,7 @@ pip install pymupdf
 # Mechanism
 This software offers a GUI which allows input of information about a participant to identify the files (only the PDF file is strictly necessary).  
 Then, the software analyses the file in two steps:  
-1. The software reads each page of the PDF designated by the user and detects each R peak (from the QRS complexes of the ECG recording). It does so by looking along a row of the image and detecting each time the ECG line crosses this detection row. On each of these occurences, it attempts to 'go up' along the ECG line until it hits a peak (supposedly the top of an R peak, which correlates to a heart beat).  
+1. The software reads each page of the PDF designated by the user and detects each R peak (from the QRS complexes of the ECG recording). It does so by looking along a row of the image and detecting each time the ECG line crosses this detection row. On each of these occurences, it attempts to 'go up' along the ECG line until it hits a peak (supposedly the top of an R peak, which correlates to a heart beat). That way, the detection row should be low enough to catch all R peaks (some can be lower than others), but high enough to not catch the other things such as, for example, p-waves.  
 &nbsp;&nbsp;&nbsp;&nbsp;The software returns an image of each page showing where it identified each R peak, which can be verified and corrected through the GUI if necessary.  
 2. The software calculates metrics relative to HRV and returns:  
 &nbsp;&nbsp;&nbsp;&nbsp;RMSSD (root mean square of successive differences between RR intervals)  
