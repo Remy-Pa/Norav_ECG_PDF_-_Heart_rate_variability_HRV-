@@ -44,7 +44,8 @@ La compatibilité de la version exécutable (.exe) n'a pas été testée sur un 
 # Problèmes connus
 * L'écriture dans le fichier de résultat (.csv) peut parfois échouer et le fait de lancer le logiciel peut effacer les données au moment où il tente d'en écrire des nouvelles (environ 1 fois sur 5-15). Il peut être pertinent de sauvegarder des copies des fichiers entre chaque participant dont la VFC est analysée. Relancer le code devrait permettre de continuer l'analyse normalement (mais les anciennes données sont perdues sauf si elles ont été sauvegardées ailleurs).  
 * Le fait de naviguer plusieurs fois dans les menus peut éventuellement mener à des erreurs. Si l'exécution est arrêtée et le code est relancé, il devrait fonctionner correctement.  
-* Le logiciel peut parfois fermer incorrectement et demeurer actif après la fin de son exécution. Il peut être fermé en fermant le terminal (si le logiciel est exécuté à partir du code source) ou grâce au gestionnaire de tâches (task manager).  
+* Le logiciel peut parfois fermer incorrectement et demeurer actif après la fin de son exécution. Il peut être fermé en fermant le terminal (si le logiciel est exécuté à partir du code source) ou grâce au gestionnaire de tâches (task manager).
+* Le logiciel pourrait être plus rapide si la manière de détecter les pixels noirs était différente (créer un tableau de booléens et vérifier les valeurs par index au lieu de vérifier chaque pixel plusieurs fois). Voir le commentaire dans Source code/VFC eco source.py à la ligne 514 dans draw_lines_and_find_highest().
 
 ## English version
 
@@ -93,3 +94,4 @@ Compatibility of the executable (.exe) has not been tested on systems other than
 * The fact of navigating in back and forth through the menus can eventually lead to errors. If the execution is stopped and the code is re-run, it should go back to normal.  
 * The software can sometimes end itself incorrectly and remain active after the end of its execution. It can be stopped by killing the terminal running it (if the source code is being used) or through task manager.  
 * The .exe version can be harder to use due to unexpected errors which can be hard to troubleshoot and debug.
+* The software could probably be faster if the way of detecting the black pixels was changed to creating a boolean array of a part of each page where the values can then be checked by index (current method might check for pixel color multiple times). See comment in Source code/VFC eco source.py at ligne 514 in draw_lines_and_find_highest().
