@@ -511,7 +511,7 @@ def draw_lines_and_find_highest(image_name, current_coords) :
         couleurs_coordonnees = []
 
         # Remplir la liste
-        for x in range(current_x-2  , current_x+4) :
+        for x in range(current_x-2  , current_x+4) : # instead of each time making lists with points and checking each one to see if they're black, make a boolean array of every pixel in a certain part of the image (True for black and False for not black) and then jus check the status of those pixels using indexes
             for y in range(current_y - 20, current_y+1) :
                 blue = image[y,x,0] #####
                 red = image[y,x,2]
